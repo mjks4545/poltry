@@ -1,0 +1,82 @@
+Dim i As Integer
+        For i = 0 To listassigned.Items.Count - 1
+            Select Case listassigned.Items(i)
+                Case "Parts"    'code 1
+                    Dim cmd1 As New SqlCommand
+                    cmd1.CommandText = "[Spsetting]"
+                    cmd1.CommandType = CommandType.StoredProcedure
+                    cmd1.Parameters.Add("@userno", SqlDbType.Int, ParameterDirection.Input).Value = txtempid.Text.Trim()
+                    cmd1.Parameters.Add("@deptid", SqlDbType.Int, ParameterDirection.Input).Value = Integer.Parse(1)
+                    cmd1.Connection = db.openconnection
+                    cmd1.ExecuteNonQuery()
+                    db.Closeconnection()
+
+                Case "Services" 'code 2
+                    Dim cmd2 As New SqlCommand
+                    cmd2.CommandText = "[Spsetting]"
+                    cmd2.CommandType = CommandType.StoredProcedure
+                    cmd2.Parameters.Add("@userno", SqlDbType.Int, ParameterDirection.Input).Value = txtempid.Text.Trim()
+                    cmd2.Parameters.Add("@deptid", SqlDbType.Int, ParameterDirection.Input).Value = Integer.Parse(2)
+                    cmd2.Connection = db.openconnection
+                    cmd2.ExecuteNonQuery()
+                    db.Closeconnection()
+                Case "Sales"  ' code 3
+                    Dim c As Integer
+                    c = 3
+                    Dim cmd3 As New SqlCommand
+                    cmd3.CommandText = "[Spsetting]"
+                    cmd3.CommandType = CommandType.StoredProcedure
+                    cmd3.Parameters.Add("@userno", SqlDbType.Int, ParameterDirection.Input).Value = txtempid.Text.Trim()
+                    cmd3.Parameters.Add("@deptid", SqlDbType.Int, ParameterDirection.Input).Value = c
+                    cmd3.Connection = db.openconnection
+                    cmd3.ExecuteNonQuery()
+                    db.Closeconnection()
+              
+                Case "Finance"   'code 4
+                    Dim d As Integer
+                    d = 4
+                    Dim cmd4 As New SqlCommand
+                    cmd4.CommandText = "[Spsetting]"
+                    cmd4.CommandType = CommandType.StoredProcedure
+                    cmd4.Parameters.Add("@userno", SqlDbType.Int, ParameterDirection.Input).Value = txtempid.Text.Trim()
+                    cmd4.Parameters.Add("@deptid", SqlDbType.Int, ParameterDirection.Input).Value = d
+                    cmd4.Connection = db.openconnection
+                    cmd4.ExecuteNonQuery()
+                    db.Closeconnection()
+                Case "HRM"  'code 5
+                    Dim f As Integer
+                    f = 5
+                    Dim cmd5 As New SqlCommand
+                    cmd5.CommandText = "[Spsetting]"
+                    cmd5.CommandType = CommandType.StoredProcedure
+                    cmd5.Parameters.Add("@userno", SqlDbType.Int, ParameterDirection.Input).Value = txtempid.Text.Trim()
+                    cmd5.Parameters.Add("@deptid", SqlDbType.Int, ParameterDirection.Input).Value = f
+                    cmd5.Connection = db.openconnection
+                    cmd5.ExecuteNonQuery()
+                    db.Closeconnection()
+                Case "Customer Relations"   'code 6
+                    Dim g As Integer
+                    g = 6
+                    Dim cmd6 As New SqlCommand
+                    cmd6.CommandText = "[Spsetting]"
+                    cmd6.CommandType = CommandType.StoredProcedure
+                    cmd6.Parameters.Add("@userno", SqlDbType.Int, ParameterDirection.Input).Value = txtempid.Text.Trim()
+                    cmd6.Parameters.Add("@deptid", SqlDbType.Int, ParameterDirection.Input).Value = 6
+                    cmd6.Connection = db.openconnection
+                    cmd6.ExecuteNonQuery()
+                    db.Closeconnection()
+                Case "Security"   ' code 7
+                    Dim h As Integer
+                    h = 7
+                    Dim cmd7 As New SqlCommand
+                    cmd7.CommandText = "[Spsetting]"
+                    cmd7.CommandType = CommandType.StoredProcedure
+                    cmd7.Parameters.Add("@userno", SqlDbType.Int, ParameterDirection.Input).Value = txtempid.Text.Trim()
+                    cmd7.Parameters.Add("@deptid", SqlDbType.Int, ParameterDirection.Input).Value = h
+                    cmd7.Connection = db.openconnection
+                    cmd7.ExecuteNonQuery()
+                    db.Closeconnection()
+            End Select
+        Next
+        MessageBox.Show("record saved")
+    End Sub
